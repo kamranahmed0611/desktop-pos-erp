@@ -1,0 +1,66 @@
+<svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- BACKGROUND CIRCLE BADGE (SOFT CREAM) -->
+  <rect width="400" height="400" rx="80" fill="#F7F3EB" />
+  
+  <!-- LEFT BEAR EAR -->
+  <circle cx="140" cy="115" r="50" fill="#73492D" />
+  <circle cx="140" cy="115" r="28" fill="#F7F3EB" />
+  <circle cx="140" cy="115" r="14" fill="#5B7981" />
+
+  <!-- RIGHT BEAR EAR -->
+  <circle cx="260" cy="115" r="50" fill="#73492D" />
+  <circle cx="260" cy="115" r="28" fill="#F7F3EB" />
+  <circle cx="260" cy="115" r="14" fill="#5B7981" />
+
+  <!-- MAIN BEAR HEAD -->
+  <circle cx="200" cy="205" r="110" fill="#73492D" />
+
+  <!-- SNOUT (BEIGE OVAL) -->
+  <ellipse cx="200" cy="245" rx="55" ry="40" fill="#F7EBE1" />
+
+  <!-- NOSE -->
+  <ellipse cx="200" cy="228" rx="14" ry="11" fill="#3A2213" />
+
+  <!-- SMILE -->
+  <path 
+    d="M175 252 Q200 270 225 252" 
+    stroke="#3A2213" 
+    stroke-width="6" 
+    stroke-linecap="round" 
+    fill="none" 
+  />
+
+  <!-- CIRCUIT BOARD TECH LINES -->
+  <path 
+    d="M130 160 L180 160 L200 175 L220 160 L270 160" 
+    stroke="#0080C8" 
+    stroke-width="6" 
+    stroke-linecap="round" 
+    stroke-linejoin="round" 
+  />
+
+  <path 
+    d="M140 215 L165 195 L175 195" 
+    stroke="#0080C8" 
+    stroke-width="5" 
+    stroke-linecap="round" 
+  />
+
+  <path 
+    d="M260 215 L235 195 L225 195" 
+    stroke="#0080C8" 
+    stroke-width="5" 
+    stroke-linecap="round" 
+  />
+
+  <!-- CIRCUIT NODES / EYE TECH DOTS -->
+  <circle cx="165" cy="195" r="12" fill="#0080C8" />
+  <circle cx="165" cy="195" r="5" fill="#FFFFFF" />
+
+  <circle cx="235" cy="195" r="12" fill="#0080C8" />
+  <circle cx="235" cy="195" r="5" fill="#FFFFFF" />
+
+  <circle cx="200" cy="175" r="7" fill="#0080C8" />
+  <circle cx="130" cy="160" r="7" fill="#0080C8" />
+  <circle cx="270" cy="160" r="7" fill="#0080C8" />
+</svg>

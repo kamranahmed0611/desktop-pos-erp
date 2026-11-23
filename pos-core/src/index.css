@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #F7F5F0;
+    color: #243338;
+    @apply antialiased overflow-x-hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-heading {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  code, kbd, .font-mono {
+    font-family: 'JetBrains Mono', Courier, monospace;
+  }
+}
+
+/* Custom Subtle Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F7F5F0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D9CFC1;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5B7981;
+}
+
+/* Crisp 1-Bit Thermal Printer & Zero-Waste Auto-Cutter Styling (M10.1, M10.2) */
+@media print {
+  @page {
+    margin: 0;
+    size: 80mm auto; /* Variable length, strictly 80mm roll width */
+  }
+
+  body * {
+    visibility: hidden;
+  }
+
+  #printable-thermal-receipt, #printable-thermal-receipt * {
+    visibility: visible;
+  }
+
+  #printable-thermal-receipt {
+    position: absolute !important;
+    top: 0 !important;
+    left: 6.5mm !important; /* Offset-adjusted center for XP-365B physical paper guide */
+    display: block !important;
+    width: 68mm !important;
+    max-width: 68mm !important;
+    margin: 0 !important;
+    padding: 2mm 1.5mm 1mm 1.5mm !important;
+    box-sizing: border-box !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-family: Consolas, 'Roboto Mono', 'Courier New', Courier, monospace !important;
+    font-size: 11px !important;
+    line-height: 1.15 !important;
+    -webkit-font-smoothing: none !important;
+    font-smooth: never !important;
+    text-rendering: geometricPrecision !important;
+    box-shadow: none !important;
+    border: none !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    overflow: hidden !important;
+  }
+
+  #printable-thermal-receipt * {
+    color: #000000 !important;
+    font-weight: 700 !important;
+  }
+
+  .receipt-item-row {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .receipt-table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    color: #000000 !important;
+  }
+
+  .receipt-table th,
+  .receipt-table td {
+    padding: 1px 0 !important;
+    font-size: 11px !important;
+    color: #000000 !important;
+  }
+
+  .divider-dashed {
+    border-top: 1px dashed #000000 !important;
+    margin: 2px 0 !important;
+  }
+
+  .divider-double {
+    border-top: 2px solid #000000 !important;
+    margin: 2px 0 !important;
+  }
+
+  /* Zero Paper Waste: Remove bottom margin to trigger printer cutter immediately */
+  .receipt-footer-end {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* Allow A4 report printing when printable-a4-financial-report is present */
+  #printable-a4-financial-report, #printable-a4-financial-report * {
+    visibility: visible !important;
+  }
+  #printable-a4-financial-report {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 10mm !important;
+  }
+}
+

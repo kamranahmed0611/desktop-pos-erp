@@ -1,0 +1,90 @@
+{
+  "name": "pos-product",
+  "version": "1.0.0",
+  "main": "electron/main.cjs",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "vite pos-core --config pos-core/vite.config.mts --port 3000 --open",
+    "dev:host": "vite pos-core --config pos-core/vite.config.mts --port 3000 --host",
+    "server": "tsx server/index.ts",
+    "start": "concurrently \"tsx server/index.ts\" \"vite pos-core --config pos-core/vite.config.mts --port 3000\" \"wait-on http://localhost:3000 && cross-env NODE_ENV=development PORT=3000 electron .\"",
+    "electron:dev": "cross-env NODE_ENV=development PORT=3000 electron .",
+    "build": "vite build --config pos-core/vite.config.mts",
+    "electron:build": "npm run build && electron-builder --win && powershell -Command \"Copy-Item C:/Users/Kamran/.electron-release/*.exe* release/ -Force\"",
+    "test": "tsx pos-core/test_pos_core.ts",
+    "db:clean": "tsx pos-core/scripts/clean_db.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "better-sqlite3": "^13.0.3",
+    "bwip-js": "^4.11.4",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "lucide-react": "^1.48.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "socket.io": "^4.8.4",
+    "zustand": "^5.0.15"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/better-sqlite3": "^9.6.0",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.3",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.1",
+    "autoprefixer": "^10.6.1",
+    "concurrently": "^10.0.6",
+    "cross-env": "^10.1.0",
+    "electron": "^44.7.0",
+    "electron-builder": "^26.15.3",
+    "postcss": "^8.5.28",
+    "tailwindcss": "^4.3.3",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.1",
+    "wait-on": "^9.5.1"
+  },
+  "description": "Point of Sale & Supermarket ERP System",
+  "build": {
+    "appId": "com.posproduct.pos",
+    "productName": "Point of Sale & ERP",
+    "copyright": "Copyright © 2026 POS Product",
+    "directories": {
+      "output": "C:/Users/Kamran/.electron-release"
+    },
+    "files": [
+      "dist-core/**/*",
+      "electron/**/*",
+      "package.json",
+      "grocery_master.db"
+    ],
+    "extraResources": [
+      {
+        "from": "grocery_master.db",
+        "to": "grocery_master.db"
+      }
+    ],
+    "asar": true,
+    "asarUnpack": [
+      "**/node_modules/better-sqlite3/**"
+    ],
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Point of Sale & ERP",
+      "deleteAppDataOnUninstall": false
+    }
+  }
+}
